@@ -35,7 +35,6 @@ body
    display: flex
    flex-direction: column
    cursor: pointer
-   // gap: 13px
    &__title
       display: flex
       align-items: center
@@ -52,3 +51,41 @@ body
       font-size: 15px
       font-weight: 400
       line-height: 146.667%
+
+.input
+   border-radius: 6px
+   border: 1px solid var(--gray-light)
+   background: var(--white)
+   padding: 7px 14px
+   font-size: 15px
+   font-weight: 400
+   line-height: 160%
+   display: block
+   width: 100%
+   &:hover, &:focus, &:active, &:focus-visible, &:focus-within
+      outline: 1px solid var(--primary)
+   &.--error
+      border-color: var(--red)
+   &__wrapper
+      position: relative
+      width: 100%
+   &__label
+      font-size: 13px
+      font-weight: 400
+      margin-bottom: 4px
+      cursor: pointer
+      &.--error
+         color: var(--red)
+   &__error-msg
+      font-size: 13px
+      font-weight: 400
+      margin-bottom: 4px
+      cursor: pointer
+      color: var(--red)
+
+.title
+   font-size: 26px
+   font-weight: 800
+   line-height: 138.462%
+   &__text
+      font-weight: 500
