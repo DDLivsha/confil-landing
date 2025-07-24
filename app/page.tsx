@@ -1,4 +1,4 @@
-import Accordeon from "@/components/common/Accordeon";
+import Accordeon from "@/components/common/Accordion";
 import Button from "@/components/common/Button";
 import Image from "next/image";
 
