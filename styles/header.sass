@@ -1,0 +1,41 @@
+@use "./mixins.sass" as *
+
+.header
+   display: flex
+   align-items: center
+   gap: 35px
+   margin-top: 16px
+   padding: 13px 32px
+   border-radius: 8px
+   border: 2px solid rgba(255, 255, 255, 0.68)
+   background: rgba(255, 255, 255, 0.38)
+   backdrop-filter: blur(10px)
+   position: sticky
+   z-index: 100
+   top: 16px
+   &__logo
+      display: flex
+      align-items: center
+      gap: 8px
+      &-text
+         font-size: 26px
+         font-weight: 800
+         color: var(--primary)
+   &__nav
+      display: flex
+      justify-content: space-between
+      align-items: center
+      flex: 1
+      &-list
+         display: flex
+         gap: 30px
+      &-item
+         font-size: 15px
+         font-weight: 600
+         line-height: 146.667%
+         cursor: pointer
+         transition: all 0.3s ease
+         &:hover
+            color: var(--primary)
+         &.--active
+            color: var(--primary)

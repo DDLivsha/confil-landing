@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Lexend } from "next/font/google";
 import "./globals.sass";
 import './tailwind.css'
+import Header from "@/components/Header";
 
 const LexendFont = Lexend({
   variable: "--font-lexend",
@@ -24,6 +25,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${LexendFont.variable}`}>
         <div className="container">
+          <Header />
           {children}
         </div>
       </body>
