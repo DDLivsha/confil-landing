@@ -5,7 +5,7 @@ import twitter from '@/assets/images/icons/twitter.svg'
 import google from '@/assets/images/icons/google.svg'
 import Image from 'next/image'
 import Link from 'next/link'
-import { navigationMenuItems } from '@/utils/navigation-items'
+import { navigationMenuItems } from '@/constants/navigation-items'
 import { format } from 'date-fns'
 
 const Footer: FC = () => {

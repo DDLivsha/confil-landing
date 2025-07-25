@@ -4,7 +4,7 @@ import logo from '@/assets/images/logo.svg'
 import Image from 'next/image'
 import Link from 'next/link'
 import Button from './common/Button'
-import { navigationMenuItems } from '@/utils/navigation-items'
+import { navigationMenuItems } from '@/constants/navigation-items'
 
 const Header: FC = () => {
 
