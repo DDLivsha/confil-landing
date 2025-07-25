@@ -1,0 +1,45 @@
+@use "./mixins.sass" as *
+
+.footer
+   display: flex
+   flex-direction: column
+   gap: 20px
+   &__content
+      display: flex
+      justify-content: space-between
+      align-items: center
+      &-wrapper
+         padding: 40px 0
+         border-radius: 60px 60px 0px 0px
+         background: linear-gradient(72deg, rgba(26, 38, 128, 0.80) 22.16%, rgba(37, 174, 228, 0.70) 76.47%)
+   &__logo
+      display: flex
+      gap: 8px
+      align-items: center
+      &-text
+         font-size: 20px
+         font-weight: 800
+         color: var(--white)
+   &__text
+      max-width: 320px
+      line-height: 147%
+      color: var(--gray-light)
+   &__title
+      color: var(--white)
+      font-weight: 500
+      line-height: 140%
+   &__list
+      display: grid
+      grid-template-columns: repeat(2, 1fr)
+      gap: 8px 40px
+      &-item
+         color: var(--white)
+         transition: all 0.3s ease
+         cursor: pointer
+         &:hover
+            color: var(--gray-light)
+   &__copyright
+      line-height: 146.667%
+      span
+         color: var(--primary)
+         font-weight: 700

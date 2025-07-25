@@ -4,31 +4,10 @@ import logo from '@/assets/images/logo.svg'
 import Image from 'next/image'
 import Link from 'next/link'
 import Button from './common/Button'
+import { navigationMenuItems } from '@/utils/navigation-items'
 
 const Header: FC = () => {
 
-   const menuItems = [
-      {
-         title: 'Features',
-         id: 'features'
-      },
-      {
-         title: 'How it works',
-         id: 'how-it-works'
-      },
-      {
-         title: 'Testimonials',
-         id: 'testimonials'
-      },
-      {
-         title: 'Pricing',
-         id: 'pricing'
-      },
-      {
-         title: 'FAQs',
-         id: 'faqs'
-      }
-   ]
 
    return (
       <header className='header'>
@@ -38,7 +17,7 @@ const Header: FC = () => {
          </Link>
          <nav className="header__nav">
             <ul className="header__nav-list">
-               {menuItems.map((item) => (
+               {navigationMenuItems.map((item) => (
                   <li
                      key={item.id}
                      className="header__nav-item"

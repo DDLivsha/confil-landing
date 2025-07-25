@@ -3,6 +3,7 @@ import { Lexend } from "next/font/google";
 import "./globals.sass";
 import './tailwind.css'
 import Header from "@/components/Header";
+import Footer from "@/components/Footer";
 
 const LexendFont = Lexend({
   variable: "--font-lexend",
@@ -28,6 +29,7 @@ export default function RootLayout({
           <Header />
           {children}
         </div>
+        <Footer />
       </body>
     </html>
   );
