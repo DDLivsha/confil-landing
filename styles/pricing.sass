@@ -1,0 +1,67 @@
+@use "./mixins.sass" as *
+
+.pricing
+   margin-top: 100px
+   text-align: center
+   display: flex
+   flex-direction: column
+   align-items: center
+   &__card
+      display: flex
+      padding: 24px
+      flex-direction: column
+      align-items: center
+      justify-content: space-between
+      gap: 16px
+      border-radius: 6px
+      background: var(--white)
+      box-shadow: 0px 4px 16px 0px rgba(168, 170, 174, 0.45)
+      &-wrapper
+         margin-top: 80px
+         display: grid
+         grid-template-columns: repeat(3, 1fr)
+         gap: 26px
+         max-width: 1280px
+      &-title
+         font-size: 26px
+         font-weight: 500
+         line-height: 138.462%
+         margin-bottom: 6px
+      &-price
+         color: var(--primary)
+         font-size: 48px
+         font-weight: 500
+         line-height: 141.667%
+         display: flex
+         gap: 2px
+         align-items: center
+         &.--enterprise
+            font-size: 26px
+            line-height: 138.462%
+         p
+            color: var(--primary)
+            font-size: 15px
+            font-weight: 400
+            line-height: 146.667%
+            margin-bottom: 10px
+         span
+            color: var(--gray-light)
+            font-size: 15px
+            font-weight: 400
+            line-height: 146.667%
+            margin-bottom: 10px
+      &-list
+         display: flex
+         flex-direction: column
+         gap: 10px
+         width: 100%
+         text-align: left
+         list-style: circle
+         margin-left: 28px
+   &__text
+      font-size: 22px
+      font-weight: 500
+      line-height: 136.364%
+      margin-top: 26px
+      a
+         color: var(--primary)

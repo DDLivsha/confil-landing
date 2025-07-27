@@ -93,3 +93,29 @@ body
    line-height: 138.462%
    &__text
       font-weight: 500
+
+.switch
+   cursor: pointer
+   &__input
+      display: none
+   &__slider
+      position: relative
+      width: 30px
+      height: 18px
+      border: 1px solid #DBDADE
+      border-radius: 9999px
+      transition: background-color 0.3s ease
+      &::after
+         content: ''
+         position: absolute
+         top: 2px
+         left: 2px
+         width: 12px
+         height: 12px
+         background-color: #DBDADE
+         border-radius: 9999px
+         transition: transform 0.3s ease
+   &__input:checked + &__slider
+      background-color: var(--primary)
+   &__input:checked + &__slider::after
+      transform: translateX(12px)

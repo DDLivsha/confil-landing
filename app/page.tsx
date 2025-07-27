@@ -2,6 +2,7 @@ import bg from '@/assets/images/main-bg.png'
 import Features from '@/components/features/Features';
 import Home from '@/components/home/Home';
 import HowItWorks from '@/components/how-it-works/HowItWorks';
+import Pricing from '@/components/pricing/Pricing';
 import Testimonials from '@/components/testimonials/Testimonials';
 import Image from 'next/image';
 
@@ -13,6 +14,7 @@ export default function HomePage() {
       <Features />
       <HowItWorks />
       <Testimonials />
+      <Pricing />
     </>
 
   );
