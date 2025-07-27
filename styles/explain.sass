@@ -1,0 +1,35 @@
+@use "./mixins.sass" as *
+
+.explain
+   text-align: center
+   margin-top: 100px
+   &__card
+      display: flex
+      align-items: center
+      justify-content: space-between
+      gap: 48px
+      margin-top: 60px
+      &.--reverse
+         flex-direction: row-reverse
+   &__title
+      color: var(--white)
+      text-align: start
+      font-size: 22px
+      font-weight: 500
+      line-height: 136.364%
+      &.--blue
+         color: var(--secondary)
+   &__text
+      font-size: 18px
+      line-height: 155.556%
+      text-align: start
+      &.--white
+         color: var(--white)
+   &__background
+      position: absolute
+      z-index: -1
+      left: 0
+      top: -100px
+      width: 100%
+   &__image
+      border-radius: 6px

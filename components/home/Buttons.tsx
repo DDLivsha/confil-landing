@@ -8,7 +8,7 @@ const Buttons: FC = () => {
    const handleScrollToFeatures = () => {
       const featuresSection = document.getElementById('features')
       if (featuresSection) {
-         featuresSection.scrollIntoView({ behavior: 'smooth' })
+         featuresSection.scrollIntoView({ behavior: 'smooth', block: 'center' })
       }
    }
 

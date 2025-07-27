@@ -25,10 +25,8 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${LexendFont.variable}`}>
-        <div className="container">
-          <Header />
-          {children}
-        </div>
+        <Header />
+        {children}
         <Footer />
       </body>
     </html>
