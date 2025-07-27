@@ -5,11 +5,13 @@ import twitter from '@/assets/images/icons/twitter.svg'
 import google from '@/assets/images/icons/google.svg'
 import Image from 'next/image'
 import Link from 'next/link'
-import { navigationMenuItems } from '@/constants/navigation-items'
 import { format } from 'date-fns'
+import FooterNav from './FooterNav'
 
 const Footer: FC = () => {
+
    return (
+
       <footer className='footer'>
          <div className='footer__content-wrapper'>
             <div className='container footer__content'>
@@ -22,23 +24,7 @@ const Footer: FC = () => {
                </div>
                <div className='flex flex-col gap-[26px]'>
                   <p className="footer__title">Navigation</p>
-                  <ul className="footer__list">
-                     {navigationMenuItems.map((item) => (
-                        <li
-                           key={item.id}
-                           className="footer__list-item"
-                        >
-                           {item.title}
-                        </li>
-                     ))}
-                     <Link href={"/contact-us"}>
-                        <li
-                           className="footer__list-item"
-                        >
-                           Contact Us
-                        </li>
-                     </Link>
-                  </ul>
+                  <FooterNav />
                </div>
             </div>
          </div>

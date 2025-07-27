@@ -3,8 +3,9 @@ import React, { FC } from 'react'
 import logo from '@/assets/images/logo.svg'
 import Image from 'next/image'
 import Link from 'next/link'
-import Button from './common/Button'
+import Button from '../common/Button'
 import { navigationMenuItems } from '@/constants/navigation-items'
+import { handleScrollToBlock } from '@/helpers/scroll-to-block'
 
 const Header: FC = () => {
 
@@ -21,6 +22,7 @@ const Header: FC = () => {
                      <li
                         key={item.id}
                         className="header__nav-item"
+                        onClick={() => handleScrollToBlock(item.id)}
                      >
                         {item.title}
                      </li>
