@@ -73,7 +73,7 @@ const HowItWorks: FC<Props> = ({ className }) => {
 
          <div className=''>
             <div className='container explain__card'>
-               <Image src={fourth} alt="Archive, Export, or Print" width={520} height={348} className='explain__image' />
+               <Image src={sixth} alt="Archive, Export, or Print" width={520} height={348} className='explain__image' />
                <div className='flex flex-col gap-1.5 max-w-[450px]'>
                   <h3 className="explain__title --blue">6. Archive, Export, or Print</h3>
                   <p className="explain__text">Archive signed forms, export as PDF, or print copies when needed. All documents are safely stored and easy to manage.</p>
@@ -83,7 +83,5 @@ const HowItWorks: FC<Props> = ({ className }) => {
       </section>
    )
 }
-
-{/* <Image src={bg} alt="bg" placeholder='blur' quality={90} className='absolute z-[-1] left-0 top-0 w-full' /> */ }
 
 export default HowItWorks
