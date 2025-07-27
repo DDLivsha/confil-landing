@@ -12,7 +12,7 @@ const Header: FC = () => {
       <div className='container sticky top-4 z-[100]'>
          <header className='header'>
             <Link href="/" className='header__logo'>
-               <Image src={logo} alt="logo" width={40} height={40} priority />
+               <Image src={logo} alt="logo" width={40} height={40} />
                <p className='header__logo-text'>Confil</p>
             </Link>
             <nav className="header__nav">

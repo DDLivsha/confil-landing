@@ -1,4 +1,5 @@
 import bg from '@/assets/images/main-bg.png'
+import Faq from '@/components/faq/Faq';
 import Features from '@/components/features/Features';
 import Home from '@/components/home/Home';
 import HowItWorks from '@/components/how-it-works/HowItWorks';
@@ -15,6 +16,7 @@ export default function HomePage() {
       <HowItWorks />
       <Testimonials />
       <Pricing />
+      <Faq />
     </>
 
   );
