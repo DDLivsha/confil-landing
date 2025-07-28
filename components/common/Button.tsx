@@ -9,7 +9,7 @@ interface Props extends Omit<DetailedHTMLProps<ButtonHTMLAttributes<HTMLButtonEl
    variant?: 'primary' | 'secondary'
 }
 
-const Button: FC<Props> = ({ children, variant = 'secondary', className, ...props }) => {
+const Button: FC<Props> = ({ children, variant = 'primary', className, ...props }) => {
    return (
       <motion.button
          {...props}

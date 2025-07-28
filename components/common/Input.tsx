@@ -12,9 +12,9 @@ const Input: FC<Props> = forwardRef(({ className, label, id, error, ...props }, 
    const inputId = id || props.name || `input-${Math.random()}`
 
    return (
-      <div className='input__wrapper'>
-         {label && <label htmlFor={inputId} className={cn('input__label', { '--error': error })}>{label}</label>}
-         <input ref={ref} id={inputId} {...props} className={cn('input', className, { '--error': error })} />
+      <div className={cn('input__wrapper', className)}>
+         {label && <label htmlFor={inputId} className={cn('input__label')}>{label}</label>}
+         <input ref={ref} id={inputId} {...props} className={cn('input', { '--error': error })} />
          {error && <span className='input__error-msg'>{error.message}</span>}
       </div>
    ) 

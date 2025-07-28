@@ -7,11 +7,13 @@ import Button from '../common/Button'
 import { navigationMenuItems } from '@/constants/navigation-items'
 import { handleScrollToBlock } from '@/helpers/scroll-to-block'
 import cn from 'classnames'
-import { usePathname } from 'next/navigation'
+import { usePathname, useRouter } from 'next/navigation'
+import { useHandleScroll } from '@/hooks/useHandleScroll'
 
 const Header: FC = () => {
 
    const pathname = usePathname()
+   const router = useRouter()
 
    //================= SCROLL FOR NAV ======================
    const [activeBlock, setActiveBlock] = useState<string | null>(null)
@@ -53,6 +55,8 @@ const Header: FC = () => {
 
    }, [pathname])
 
+   const handleScroll = useHandleScroll()
+
    return (
       <div className='container sticky top-4 z-[100]'>
          <header className='header'>
@@ -66,7 +70,7 @@ const Header: FC = () => {
                      <li
                         key={item.id}
                         className={cn("header__nav-item", { '--active': activeBlock === item.id })}
-                        onClick={() => handleScrollToBlock(item.id)}
+                        onClick={() => handleScroll(item.id)}
                      >
                         {item.title}
                      </li>
