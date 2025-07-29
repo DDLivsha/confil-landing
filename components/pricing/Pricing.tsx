@@ -18,8 +18,10 @@ const Pricing: FC<Props> = ({ className }) => {
 
    return (
       <section id='pricing' className={cn(className, 'pricing')}>
-         <Title boldText='Simple'>Pricing, Built for Clinics of All Sizes</Title>
-         <p className='max-w-[734px] mt-1 mx-auto text-center'>Whether you're a solo practitioner or managing a multi-site healthcare network, Confil offers flexible plans to match your needs — no hidden fees, no IT setup required.</p>
+         <div className='container'>
+            <Title boldText='Simple'>Pricing, Built for Clinics of All Sizes</Title>
+            <p className='max-w-[734px] mt-1 mx-auto text-center'>Whether you're a solo practitioner or managing a multi-site healthcare network, Confil offers flexible plans to match your needs — no hidden fees, no IT setup required.</p>
+         </div>
          <div className='container flex items-center justify-center'>
             <div className='flex items-center justify-center mt-[42px] gap-[10px] relative w-fit'>Monthly
                <Switch
@@ -42,7 +44,7 @@ const Pricing: FC<Props> = ({ className }) => {
                   <ul className="pricing__card-list">
                      {item.features.map((item, key) => (
                         <li key={key}>{item}</li>
-                        ))}
+                     ))}
                   </ul>
                   <Link className='w-full' href={`${process.env.NEXT_PUBLIC_APP_LINK}`}>
                      <Button variant='primary' className='w-full'>Try this Plan</Button>

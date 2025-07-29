@@ -19,7 +19,7 @@ export default function HomePage() {
       <Testimonials />
       <Pricing />
       <Faq />
-      <div className='ending'>
+      <div className='ending container'>
         <h4>Start Simplifying Your Clinic’s Paperwork</h4>
         <Link href={`${process.env.NEXT_PUBLIC_APP_LINK}`}>
           <Button variant='primary'>Try Confil - it’s FREE</Button>

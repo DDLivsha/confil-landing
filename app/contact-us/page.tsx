@@ -25,7 +25,7 @@ export default function ContactUsPage() {
             <div className="contact__form-wrapper">
                <div>
                   <h4 className='contact__form-title'>Send a message</h4>
-                  <p className='max-w-[500px]'>If you would like to discuss anything related to payment, account, licensing, partnerships, or have pre-sales questions, you’re at the right place.</p>
+                  <p className='max-w-[500px] !text-[15px]'>If you would like to discuss anything related to payment, account, licensing, partnerships, or have pre-sales questions, you’re at the right place.</p>
                </div>
                <ContactForm />
             </div>

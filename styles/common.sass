@@ -46,6 +46,7 @@ body
       font-size: 16px
       font-weight: 500
       line-height: 140%
+      gap: 10px
    &__arrow
       transition: transform 0.2s ease-in-out
       &.--open
@@ -91,6 +92,8 @@ body
    font-size: 26px
    font-weight: 800
    line-height: 138.462%
+   @include onPhone
+      font-size: 23px
    &__text
       font-weight: 500
 
@@ -119,3 +122,23 @@ body
       background-color: var(--primary)
    &__input:checked + &__slider::after
       transform: translateX(12px)
+
+
+.ending
+   margin: 60px 0
+   display: flex
+   flex-direction: column
+   gap: 26px
+   align-items: center
+   @include onTablet
+      margin: 40px 0
+      gap: 20px
+   h4
+      text-align: center
+      font-size: 32px
+      font-weight: 500
+      line-height: 137.5%
+      @media(max-width: 650px)
+         font-size: 26px
+      @media(max-width: 425px)
+         font-size: 22px
