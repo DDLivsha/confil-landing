@@ -25,9 +25,12 @@
       border: 1px solid var(--gray-ultra-light)
       padding: 10px
       flex-shrink: 0
-      max-height: 465px
+      max-height: 486px
       @media(max-width: 950px)
          display: none
+      &-pic
+         height: 100%
+         object-fit: cover
    &__form
       margin-top: 20px
       display: grid
@@ -57,9 +60,7 @@
          text-align: left
          display: flex
          flex-direction: column
-         max-height: 465px
-         @media(max-width: 950px)
-            max-height: unset
+
       &-title
          color: var(--primary)
          font-size: 22px

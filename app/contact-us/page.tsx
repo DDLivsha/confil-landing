@@ -19,13 +19,13 @@ export default function ContactUsPage() {
          <p>Any question or remark? just write us a message</p>
          <div className='contact__content'>
             <div className='contact__image'>
-               <Image src={contact_us} alt="contact us" placeholder='blur' className='faq__image-pic' width={434} height={445} />
+               <Image src={contact_us} alt="contact us" placeholder='blur' className='faq__image-pic contact__image-pic' width={434} height={486} />
                <Image src={border} alt="border" width={188} height={156} className='faq__border' />
             </div>
             <div className="contact__form-wrapper">
                <div>
                   <h4 className='contact__form-title'>Send a message</h4>
-                  <p className='max-w-[500px] !text-[15px]'>If you would like to discuss anything related to payment, account, licensing, partnerships, or have pre-sales questions, you’re at the right place.</p>
+                  <p className='max-w-[500px]'>If you would like to discuss anything related to payment, account, licensing, partnerships, or have pre-sales questions, you’re at the right place.</p>
                </div>
                <ContactForm />
             </div>
