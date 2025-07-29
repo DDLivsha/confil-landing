@@ -22,6 +22,9 @@
          grid-template-columns: repeat(3, 1fr)
          gap: 26px
          max-width: 1280px
+         padding: 0 16px
+         @media(max-width: 900px)
+            grid-template-columns: 1fr
       &-title
          font-size: 26px
          font-weight: 500
@@ -40,13 +43,13 @@
             line-height: 138.462%
          p
             color: var(--primary)
-            font-size: 15px
+            font-size: 16px
             font-weight: 400
             line-height: 146.667%
             margin-bottom: 10px
          span
             color: var(--gray-light)
-            font-size: 15px
+            font-size: 16px
             font-weight: 400
             line-height: 146.667%
             margin-bottom: 10px

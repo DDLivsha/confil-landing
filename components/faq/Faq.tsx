@@ -19,7 +19,7 @@ const Faq: FC<Props> = ({ className }) => {
             <div className='faq__wrapper'>
                <div className="faq__image">
                   <Image src={faq} alt="faq" placeholder='blur' className='faq__image-pic' width={397} height={265} />
-                  <Image src={border} alt="border" width={188} height={156} className='faq__border' />
+                  <Image src={border} alt="border" width={188} height={156} className='faq__border --faq' />
                </div>
                <div className='faq__accordion'>
                   {accordionList.map((item, key) => (

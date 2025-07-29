@@ -23,14 +23,17 @@
       padding: 10px
       flex-shrink: 0
       max-height: 287px
+      @media(max-width: 950px)
+         display: none
       &-pic
          border-radius: 60px 6px 6px 6px
    &__border
       position: absolute
       top: -40px
       left: -42px
-      @media(max-width: 1100px)
-         display: none
+      &.--faq
+         @media(max-width: 1200px)
+            display: none
    &__accordion
       display: flex
       flex-direction: column
