@@ -7,12 +7,13 @@ import save_up from '@/assets/images/save-up.svg'
 import Image from 'next/image'
 import Link from 'next/link'
 import Button from '../common/Button'
-import { pricingPlans } from '@/constants/pricing-plans'
+import { PricingPlansProps } from '@/interfaces/pricing-plans'
 
 interface Props {
    className?: string
+   data: PricingPlansProps[]
 }
-const Pricing: FC<Props> = ({ className }) => {
+const Pricing: FC<Props> = ({ className, data }) => {
 
    const [subscriptionPeriod, setSubscriptionPeriod] = React.useState<'year' | 'month'>('month')
 
@@ -34,7 +35,7 @@ const Pricing: FC<Props> = ({ className }) => {
             </div>
          </div>
          <div className="pricing__card-wrapper">
-            {pricingPlans.map((item, key) => (
+            {data.map((item, key) => (
                <div key={key} className="pricing__card">
                   <div>
                      <h3 className="pricing__card-title">{item.name}</h3>

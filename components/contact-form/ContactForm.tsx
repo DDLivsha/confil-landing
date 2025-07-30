@@ -13,6 +13,28 @@ interface Props {
 }
 const ContactForm: FC<Props> = ({ className }) => {
 
+   const getData = async () => {
+
+      const res =
+         await fetch(
+            `${process.env.NEXT_PUBLIC_API_URL}/rest/v1/main_data?section=eq.faq&select=*`,
+            {
+               headers: {
+                  apikey: process.env.NEXT_PUBLIC_API_KEY!,
+                  Authorization: `Bearer ${process.env.NEXT_PUBLIC_API_KEY}`,
+               }
+            }
+         )
+
+      const data = await res.json()
+
+      console.log(data)
+   }
+
+   React.useEffect(() => {
+      getData()
+   }, []);
+
    const { register, handleSubmit, formState: { errors }, reset } = useForm<ContactFormSchemaProps>({ resolver: zodResolver(contactFormSchema), mode: 'onTouched' })
 
    const onSubmit = (data: ContactFormSchemaProps) => {

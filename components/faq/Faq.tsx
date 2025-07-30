@@ -5,12 +5,13 @@ import border from '@/assets/images/faq-border.svg'
 import faq from '@/assets/images/faq-pic.jpg'
 import Image from 'next/image'
 import Accordion from '../common/Accordion'
-import { accordionList } from '@/constants/accordions'
+import { FaqProps } from '@/interfaces/accordions'
 
 interface Props {
    className?: string
+   data: FaqProps[]
 }
-const Faq: FC<Props> = ({ className }) => {
+const Faq: FC<Props> = ({ className, data }) => {
    return (
       <section id='faqs' className={cn(className, 'faq')}>
          <div className='container'>
@@ -22,7 +23,7 @@ const Faq: FC<Props> = ({ className }) => {
                   <Image src={border} alt="border" width={188} height={156} className='faq__border --faq' />
                </div>
                <div className='faq__accordion'>
-                  {accordionList.map((item, key) => (
+                  {data.map((item, key) => (
                      <Accordion key={key} title={item.title} text={item.text} />
                   ))}
                </div>

@@ -5,21 +5,22 @@ import avatar from '@/assets/images/avatar.jpg'
 import btn from '@/assets/images/icons/testimonials-btn.svg'
 import Image from 'next/image'
 import { motion, AnimatePresence } from 'motion/react'
-import { testimonialsList } from '@/constants/testimonials'
+import { TestimonialsProps } from '@/interfaces/testimonials'
 
 interface Props {
    className?: string
+   data: TestimonialsProps[]
 }
 
-const Testimonials: FC<Props> = ({ className }) => {
+const Testimonials: FC<Props> = ({ className, data }) => {
 
    //============== SLIDER LOGIC ===================
    const [[page, direction], setPage] = useState<[number, number]>([0, 0])
-   const testimonial = testimonialsList[page]
+   const testimonial = data[page]
 
    const paginate = (newDirection: number) => {
       const newPage =
-         (page + newDirection + testimonialsList.length) % testimonialsList.length
+         (page + newDirection + data.length) % data.length
       setPage([newPage, newDirection])
    }
 
@@ -38,7 +39,7 @@ const Testimonials: FC<Props> = ({ className }) => {
       const max = Math.max(...heights)
 
       setMaxHeight(max)
-   }, [testimonialsList])
+   }, [data])
 
    //============== AUTOMATICAL SLIDER ===================
    useLayoutEffect(() => {
