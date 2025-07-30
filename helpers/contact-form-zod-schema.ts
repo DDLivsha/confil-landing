@@ -7,7 +7,7 @@ export const contactFormSchema = z.object({
          { error: 'Only letters' }
       ),
    email: z.email({ error: 'Invalid email' }).min(2, { error: 'You need to fill this field' }).max(80, { error: 'Maximum 80 characters' }),
-   message: z.string().min(10, { error: 'You need to fill this field' }).max(400, { error: 'Maximum 400 characters' }),
+   message: z.string().min(10, { error: 'Minimum 10 characters' }).max(400, { error: 'Maximum 400 characters' }),
 })
 
 export type ContactFormSchemaProps = z.infer<typeof contactFormSchema>

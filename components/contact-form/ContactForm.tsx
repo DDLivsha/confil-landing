@@ -7,44 +7,19 @@ import Button from '../common/Button'
 import { ContactFormSchemaProps, contactFormSchema } from '@/helpers/contact-form-zod-schema'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { useForm } from 'react-hook-form'
+import { handleSubmitForm } from '@/api/submit-contact-form'
 
 interface Props {
    className?: string
 }
 const ContactForm: FC<Props> = ({ className }) => {
 
-   const getData = async () => {
-
-      const res =
-         await fetch(
-            `${process.env.NEXT_PUBLIC_API_URL}/rest/v1/main_data?section=eq.faq&select=*`,
-            {
-               headers: {
-                  apikey: process.env.NEXT_PUBLIC_API_KEY!,
-                  Authorization: `Bearer ${process.env.NEXT_PUBLIC_API_KEY}`,
-               }
-            }
-         )
-
-      const data = await res.json()
-
-      console.log(data)
-   }
-
-   React.useEffect(() => {
-      getData()
-   }, []);
-
    const { register, handleSubmit, formState: { errors }, reset } = useForm<ContactFormSchemaProps>({ resolver: zodResolver(contactFormSchema), mode: 'onTouched' })
 
-   const onSubmit = (data: ContactFormSchemaProps) => {
-      console.log(data)
-      reset()
-   }
 
    return (
       <>
-         <form onSubmit={handleSubmit(onSubmit)} className={cn(className, 'contact__form')}>
+         <form onSubmit={handleSubmit((data) => handleSubmitForm(data, reset))} className={cn(className, 'contact__form')}>
             <Input
                label='Full name'
                placeholder='John Doe'
