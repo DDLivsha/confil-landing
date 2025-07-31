@@ -8,6 +8,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import Button from '../common/Button'
 import { PricingPlansProps } from '@/interfaces/pricing-plans'
+import { motion } from 'motion/react'
 
 interface Props {
    className?: string
@@ -36,7 +37,14 @@ const Pricing: FC<Props> = ({ className, data }) => {
          </div>
          <div className="pricing__card-wrapper">
             {data.map((item, key) => (
-               <div key={key} className="pricing__card">
+               <motion.div
+                  key={key}
+                  className="pricing__card"
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.3, ease: 'easeInOut', when: 'beforeChildren' }}
+               >
                   <div>
                      <h3 className="pricing__card-title">{item.name}</h3>
                      <p>{item.description}</p>
@@ -50,9 +58,15 @@ const Pricing: FC<Props> = ({ className, data }) => {
                   <Link className='w-full' href={`${process.env.NEXT_PUBLIC_APP_LINK}`}>
                      <Button variant='primary' className='w-full'>Try this Plan</Button>
                   </Link>
-               </div>
+               </motion.div>
             ))}
-            <div className="pricing__card">
+            <motion.div
+               className="pricing__card"
+               initial={{ opacity: 0, scale: 0.8 }}
+               whileInView={{ opacity: 1, scale: 1 }}
+               viewport={{ once: true }}
+               transition={{ duration: 0.3, ease: 'easeInOut', when: 'beforeChildren' }}
+            >
                <h3 className="pricing__card-title">Enterprise</h3>
                <p className="pricing__card-text">Tailored for clinic networks</p>
                <div className='pricing__card-price --enterprise'>Custom</div>
@@ -64,7 +78,7 @@ const Pricing: FC<Props> = ({ className, data }) => {
                <Link href='/contact-us' className='w-full'>
                   <Button variant='primary' className='w-full'>Contact Us</Button>
                </Link>
-            </div>
+            </motion.div>
          </div>
          <h4 className='pricing__text'>Or try it out with our <Link href={`${process.env.NEXT_PUBLIC_APP_LINK}`}>Free Plan</Link></h4>
       </section>

@@ -6,6 +6,7 @@ import faq from '@/assets/images/faq-pic.jpg'
 import Image from 'next/image'
 import Accordion from '../common/Accordion'
 import { FaqProps } from '@/interfaces/accordions'
+import * as motion from 'motion/react-client'
 
 interface Props {
    className?: string
@@ -24,12 +25,20 @@ const Faq: FC<Props> = ({ className, data }) => {
                </div>
                <div className='faq__accordion'>
                   {data.map((item, key) => (
-                     <Accordion key={key} title={item.title} text={item.text} />
+                     <motion.div
+                        key={key}
+                        initial={{ opacity: 0, y: -100 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.3, ease: 'easeInOut', when: 'beforeChildren', delay: key * 0.1 }}
+                     >
+                        < Accordion title={item.title} text={item.text} />
+                     </motion.div>
                   ))}
                </div>
             </div>
          </div>
-      </section>
+      </section >
    )
 }
 
