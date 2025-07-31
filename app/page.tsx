@@ -35,13 +35,11 @@ export default async function HomePage() {
 
   return (
     <>
-      {error && <div className='fixed z-50 bottom-5 left-1/2 -translate-x-1/2 bg-red-400 text-white px-4 py-2 rounded-2xl'>{error}</div>}
-
       <Image src={bg} alt="bg" placeholder='blur' quality={90} className='absolute z-[-1] left-0 top-0 w-full max-[900px]:hidden' />
       <Home />
       <Features data={features || []} />
       <HowItWorks />
-      <Testimonials data={testimonials || []} />
+      <Testimonials data={testimonials || []} error={error} />
       <Pricing data={pricing || []} />
       <Faq data={faq || []} />
       <div className='ending container'>

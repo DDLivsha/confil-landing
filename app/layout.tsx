@@ -4,6 +4,7 @@ import "./globals.sass";
 import './tailwind.css'
 import Header from "@/components/header/Header";
 import Footer from "@/components/footer/Footer";
+import Providers from "@/components/providers/Providers";
 
 const LexendFont = Lexend({
   variable: "--font-lexend",
@@ -28,6 +29,7 @@ export default function RootLayout({
         <Header />
         {children}
         <Footer />
+        <Providers />
       </body>
     </html>
   );

@@ -1,18 +1,20 @@
 'use client'
-import React, { FC, useLayoutEffect, useRef, useState } from 'react'
+import React, { FC, useEffect, useLayoutEffect, useRef, useState } from 'react'
 import cn from 'classnames'
 import avatar from '@/assets/images/avatar.jpg'
 import btn from '@/assets/images/icons/testimonials-btn.svg'
 import Image from 'next/image'
 import { motion, AnimatePresence } from 'motion/react'
 import { TestimonialsProps } from '@/interfaces/testimonials'
+import toast from 'react-hot-toast';
 
 interface Props {
    className?: string
    data: TestimonialsProps[]
+   error: string | undefined
 }
 
-const Testimonials: FC<Props> = ({ className, data }) => {
+const Testimonials: FC<Props> = ({ className, data, error }) => {
 
    //============== SLIDER LOGIC ===================
    const [[page, direction], setPage] = useState<[number, number]>([0, 0])
@@ -49,6 +51,14 @@ const Testimonials: FC<Props> = ({ className, data }) => {
       return () => clearInterval(interval)
    }, [page])
 
+   //============== ERROR HANDLER ===================
+
+   useEffect(() => {
+      if (error) {
+         toast.error(error)
+      }
+   }, [error]);
+
    return (
       <section id='testimonials' className={cn(className, 'testimonials')}>
          <div
@@ -82,10 +92,10 @@ const Testimonials: FC<Props> = ({ className, data }) => {
                   }}
                   whileTap={{ cursor: 'grabbing' }}
                >
-                  <h2 className='testimonials__title'>{testimonial.text}</h2>
+                  <h2 className='testimonials__title'>{testimonial?.text}</h2>
                   <Image src={avatar} alt="avatar" width={40} height={40} className='testimonials__avatar' quality={100} />
-                  <p className='testimonials__name'>{testimonial.name}</p>
-                  <p className='testimonials__clinic'>{testimonial.clinic}</p>
+                  <p className='testimonials__name'>{testimonial?.name}</p>
+                  <p className='testimonials__clinic'>{testimonial?.clinic}</p>
                </motion.div>
             </AnimatePresence>
          </div>

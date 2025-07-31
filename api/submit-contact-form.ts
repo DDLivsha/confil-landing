@@ -1,5 +1,5 @@
 import { ContactFormSchemaProps, contactFormSchema } from '@/helpers/contact-form-zod-schema'
-
+import toast from 'react-hot-toast';
 
 export const handleSubmitForm = async (data: ContactFormSchemaProps, reset: () => void) => {
    try {
@@ -18,12 +18,14 @@ export const handleSubmitForm = async (data: ContactFormSchemaProps, reset: () =
 
       if (!res.ok) {
          const err = await res.json();
+         toast.error('Something went wrong: ' + err.message || 'Something went wrong. Please try again.');
          throw new Error(err.message ?? "Failed to send contact");
       } else {
-         alert('Message sent successfully')
+         toast.success('Message sent successfully');
          reset()
       }
    } catch (error) {
       console.error("Failed to send contact:", error);
+      toast.error('Something went wrong. Please try again.');
    }
 }
