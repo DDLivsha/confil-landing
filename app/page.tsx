@@ -43,7 +43,7 @@ export default async function HomePage() {
       <Pricing data={pricing || []} />
       <Faq data={faq || []} />
       <div className='ending container'>
-        <h4>Start Simplifying Your Clinic’s Paperwork</h4>
+        <p>Start Simplifying Your Clinic’s Paperwork</p>
         <Link href={`${process.env.NEXT_PUBLIC_APP_LINK}`}>
           <Button variant='primary'>Try Confil - it’s FREE</Button>
         </Link>

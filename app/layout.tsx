@@ -16,6 +16,40 @@ const LexendFont = Lexend({
 export const metadata: Metadata = {
   title: "Consentfillers | Home",
   description: "Digitise Clinic Forms Effortlessly & Securely",
+  keywords: [
+    "Clinic forms",
+    "Digital consent",
+    "Healthcare automation",
+    "Medical forms",
+    "Consentfillers"
+  ],
+  authors: [{ name: "Consentfillers Team" }],
+  applicationName: "Consentfillers",
+  openGraph: {
+    title: "Consentfillers — Digitise Clinic Forms Effortlessly & Securely",
+    description: "Easily manage and digitise clinic forms with Consentfillers. Secure, fast, and compliant with healthcare standards.",
+    url: "https://confil-landing.vercel.app",
+    siteName: "Consentfillers landing",
+    images: [
+      {
+        url: "https://confil-landing.vercel.app/og-image.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Consentfillers preview",
+      },
+    ],
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Consentfillers — Digitise Clinic Forms Effortlessly & Securely",
+    description: "Easily manage and digitise clinic forms with Consentfillers. Secure, fast, and compliant with healthcare standards.",
+    images: ["https://confil-landing.vercel.app/og-image.jpg"],
+  },
+  icons: {
+    icon: "/favicon.ico",
+  }
 };
 
 export default function RootLayout({
