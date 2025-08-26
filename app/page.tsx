@@ -7,10 +7,6 @@ import Home from '@/components/home/Home';
 import HowItWorks from '@/components/how-it-works/HowItWorks';
 import Pricing from '@/components/pricing/Pricing';
 import Testimonials from '@/components/testimonials/Testimonials';
-import { FaqProps } from '@/interfaces/accordions';
-import { FeaturesList } from '@/interfaces/features-list';
-import { PricingPlansProps } from '@/interfaces/pricing-plans';
-import { TestimonialsProps } from '@/interfaces/testimonials';
 import Image from 'next/image';
 import Link from 'next/link';
 
@@ -19,10 +15,14 @@ export default async function HomePage() {
   let faq, pricing, testimonials, features, error;
 
   try {
-    faq = await getData<FaqProps[]>("faq");
-    pricing = await getData<PricingPlansProps[]>("pricing_plans");
-    testimonials = await getData<TestimonialsProps[]>("testimonials");
-    features = await getData<FeaturesList[]>("features");
+    const data = await getData();
+
+    if (data) {
+      faq = data.faq
+      pricing = data.pricing_plans
+      testimonials = data.testimonials
+      features = data.features
+    }
   }
   catch (err) {
     console.error("Failed to load data:", err);

@@ -1,14 +1,18 @@
-export async function getData<T>(section: string): Promise<T | null> {
+import { FaqProps } from '@/interfaces/accordions';
+import { FeaturesList } from '@/interfaces/features-list';
+import { PricingPlansProps } from '@/interfaces/pricing-plans';
+import { TestimonialsProps } from '@/interfaces/testimonials';
+
+interface DataProps {
+   faq: FaqProps[];
+   pricing_plans: PricingPlansProps[];
+   testimonials: TestimonialsProps[];
+   features: FeaturesList[];
+}
+
+export async function getData(): Promise<DataProps | null> {
    try {
-      const res = await fetch(
-         `${process.env.NEXT_PUBLIC_API_URL}/rest/v1/main_data?section=eq.${section}&select=*`,
-         {
-            headers: {
-               apikey: process.env.NEXT_PUBLIC_API_KEY!,
-               Authorization: `Bearer ${process.env.NEXT_PUBLIC_API_KEY}`,
-            },
-         }
-      );
+      const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/main`);
 
       const json = await res.json();
 
@@ -17,13 +21,13 @@ export async function getData<T>(section: string): Promise<T | null> {
       }
 
       if (!json.length) {
-         throw new Error(`No data found for section "${section}"`);
+         throw new Error(`No data found`);
       }
 
-      return json[0].content;
-      
+      return json[0];
+
    } catch (error) {
-      console.error(`Error fetching ${section}:`, error);
+      console.error(`Error fetching data`, error);
       throw error;
    }
 };

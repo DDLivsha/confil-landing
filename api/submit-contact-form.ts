@@ -4,12 +4,10 @@ import toast from 'react-hot-toast';
 export const handleSubmitForm = async (data: ContactFormSchemaProps, reset: () => void) => {
    try {
       const res = await fetch(
-         `${process.env.NEXT_PUBLIC_API_URL}/rest/v1/contacts`,
+         `${process.env.NEXT_PUBLIC_API_URL}/contacts`,
          {
             method: "POST",
             headers: {
-               apikey: process.env.NEXT_PUBLIC_API_KEY!,
-               Authorization: `Bearer ${process.env.NEXT_PUBLIC_API_KEY}`,
                "Content-Type": "application/json",
             },
             body: JSON.stringify(data),
