@@ -20,13 +20,13 @@ const FooterNav: FC = () => {
                {item.title}
             </li>
          ))}
-         <Link href={"/contact-us"}>
-            <li
-               className="footer__list-item"
-            >
+         <li
+            className="footer__list-item"
+         >
+            <Link href={"/contact-us"}>
                Contact Us
-            </li>
-         </Link>
+            </Link>
+         </li>
       </ul>
    )
 }

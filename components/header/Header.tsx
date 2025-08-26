@@ -116,13 +116,13 @@ const Header: FC = () => {
                         {item.title}
                      </li>
                   ))}
-                  <Link href="/contact-us">
-                     <li
-                        className={cn("header__nav-item", { '--active': pathname === '/contact-us' })}
-                     >
+                  <li
+                     className={cn("header__nav-item", { '--active': pathname === '/contact-us' })}
+                  >
+                     <Link href="/contact-us">
                         Contact Us
-                     </li>
-                  </Link>
+                     </Link>
+                  </li>
                </ul>
                <Link href={`${process.env.NEXT_PUBLIC_APP_LINK}`}>
                   <Button variant='primary'>Get Started</Button>
@@ -153,13 +153,13 @@ const Header: FC = () => {
                               {item.title}
                            </li>
                         ))}
-                        <Link href="/contact-us" onClick={() => setIsOpen(false)}>
-                           <li
-                              className={cn("header__nav-item", { '--active': pathname === '/contact-us' })}
-                           >
+                        <li
+                           className={cn("header__nav-item", { '--active': pathname === '/contact-us' })}
+                        >
+                           <Link href="/contact-us" onClick={() => setIsOpen(false)}>
                               Contact Us
-                           </li>
-                        </Link>
+                           </Link>
+                        </li>
                      </ul>
                      <div className='header__mobile-logo'>
                         <Image src={logoWhite} alt="logo" width={40} height={40} />
